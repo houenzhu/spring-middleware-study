@@ -2,9 +2,10 @@ spring:
   data:
     redis:
       port: 6379
-      host: 192.168.198.128
+      host: localhost
       lettuce:
         pool:
           max-idle: 16
           max-active: 32
           min-idle: 8
+      database: 1

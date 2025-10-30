@@ -5,6 +5,7 @@
 
     <modules>
         <module>spring-redis</module>
+        <module>spring-mongodb</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,6 +21,7 @@
         <spring.version>3.5.7</spring.version>
         <common-pool2.version>2.12.1</common-pool2.version>
         <jackson-databind.version>2.19.2</jackson-databind.version>
+        <lombok.version>1.18.38</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -41,6 +43,16 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${common-pool2.version}</version>
@@ -49,6 +61,11 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
