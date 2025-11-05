@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a8f9544-7570-49a3-9877-0253aaa45267" name="Changes" comment="mongodb模块">
+      <change afterPath="$PROJECT_DIR$/spring-mongodb/src/main/java/com/zhe/mongodb/controller/MongoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mongodb/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/src/main/java/com/zhe/mongodb/MongoDBApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/DeleteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/DeleteTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/InsertTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/InsertTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/UpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-mongodb/src/test/java/com/zhe/mongodb/test/UpdateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/src/main/java/com/zhe/redis/SpringRedisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/zhe/SpringRedisApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/src/main/java/com/zhe/redis/web/RedisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/src/main/java/com/zhe/redis/web/RedisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;houenzhu&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/houenzhu/spring-middleware-study.git&quot;,
+    &quot;accountId&quot;: &quot;5e4c4beb-ca4b-49fa-bf62-d8422dc3b801&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\apache-maven-3.9.11" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.9.11\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="34gVW0VVoN90ur3ILhNz2IFCz73" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.DeleteTests.m1.executor": "Run",
+    "JUnit.DeleteTests.m2.executor": "Run",
+    "JUnit.DeleteTests.m3.executor": "Run",
+    "JUnit.DeleteTests.m4.executor": "Run",
+    "JUnit.DeleteTests.m5.executor": "Run",
+    "JUnit.InsertTest.m1.executor": "Run",
+    "JUnit.InsertTest.m2.executor": "Run",
+    "JUnit.InsertTest.m3.executor": "Run",
+    "JUnit.InsertTest.m4.executor": "Run",
+    "JUnit.QueryTest.m1.executor": "Run",
+    "JUnit.RedisTest.executor": "Run",
+    "JUnit.RedisTest.getHashes.executor": "Run",
+    "JUnit.RedisTest.getList.executor": "Run",
+    "JUnit.RedisTest.getValue.executor": "Run",
+    "JUnit.RedisTest.m1.executor": "Run",
+    "JUnit.RedisTest.m2.executor": "Run",
+    "JUnit.RedisTest.setHash.executor": "Run",
+    "JUnit.RedisTest.setList.executor": "Run",
+    "JUnit.RedisTest.setNx.executor": "Run",
+    "JUnit.RedisTest.setValue.executor": "Run",
+    "JUnit.RedisTest.testLockProblem.executor": "Run",
+    "JUnit.UpdateTest.m1.executor": "Run",
+    "JUnit.UpdateTest.m2.executor": "Run",
+    "JUnit.UpdateTest.m3.executor": "Run",
+    "JUnit.UpdateTest.m4.executor": "Run",
+    "Maven.spring-middleware-study [clean].executor": "Run",
+    "Maven.spring-middleware-study [package].executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SpringRedisApplication.executor": "Run",
+    "git-widget-placeholder": "pc17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/project/spring-middleware-study",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "elasticsearch"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zhe" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringRedisApplication">
+    <configuration name="DeleteTests.m5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mongodb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhe.mongodb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhe.mongodb.test" />
+      <option name="MAIN_CLASS_NAME" value="com.zhe.mongodb.test.DeleteTests" />
+      <option name="METHOD_NAME" value="m5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsertTest.m4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mongodb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhe.mongodb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhe.mongodb.test" />
+      <option name="MAIN_CLASS_NAME" value="com.zhe.mongodb.test.InsertTest" />
+      <option name="METHOD_NAME" value="m4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryTest.m1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mongodb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhe.mongodb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhe.mongodb.test" />
+      <option name="MAIN_CLASS_NAME" value="com.zhe.mongodb.test.QueryTest" />
+      <option name="METHOD_NAME" value="m1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateTest.m4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-mongodb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhe.mongodb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhe.mongodb.test" />
+      <option name="MAIN_CLASS_NAME" value="com.zhe.mongodb.test.UpdateTest" />
+      <option name="METHOD_NAME" value="m4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-middleware-study" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-middleware-study" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="spring-redis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhe.SpringRedisApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SpringRedisApplication" />
+        <item itemvalue="JUnit.QueryTest.m1" />
+        <item itemvalue="JUnit.InsertTest.m4" />
+        <item itemvalue="JUnit.DeleteTests.m5" />
+        <item itemvalue="JUnit.UpdateTest.m4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a8f9544-7570-49a3-9877-0253aaa45267" name="Changes" comment="" />
+      <created>1761635232922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761635232922</updated>
+      <workItem from="1761635234604" duration="2491000" />
+      <workItem from="1761707386420" duration="83000" />
+      <workItem from="1761707500685" duration="11083000" />
+      <workItem from="1761723079675" duration="4742000" />
+      <workItem from="1761785520592" duration="14413000" />
+      <workItem from="1761871109492" duration="1395000" />
+      <workItem from="1762155724323" duration="3028000" />
+      <workItem from="1762217404164" duration="12325000" />
+    </task>
+    <task id="LOCAL-00001" summary="初始化redis项目">
+      <option name="closed" value="true" />
+      <created>1761638761277</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761638761277</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加测试模块">
+      <option name="closed" value="true" />
+      <created>1761724153364</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761724153364</updated>
+    </task>
+    <task id="LOCAL-00003" summary="redis序列化">
+      <option name="closed" value="true" />
+      <created>1761728082934</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761728082934</updated>
+    </task>
+    <task id="LOCAL-00004" summary="redis测试模块">
+      <option name="closed" value="true" />
+      <created>1761728089130</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761728089130</updated>
+    </task>
+    <task id="LOCAL-00005" summary="mongodb模块">
+      <option name="closed" value="true" />
+      <created>1761814885907</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761814885907</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/pc17" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="初始化redis项目" />
+    <MESSAGE value="增加测试模块" />
+    <MESSAGE value="redis序列化" />
+    <MESSAGE value="redis测试模块" />
+    <MESSAGE value="mongodb模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="mongodb模块" />
+  </component>
+</project>
