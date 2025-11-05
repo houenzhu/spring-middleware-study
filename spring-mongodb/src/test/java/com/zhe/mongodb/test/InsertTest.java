@@ -45,9 +45,9 @@ public class InsertTest {
     @Test
     void m4() {
         List<Person> persons = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 2000; i++) {
             Person person = Person.builder().name("张三" + i).age(i).id((long) i).build();
-            if (i == 2) {
+            if (i % 2 == 0) {
                 person.setAddress("上海");
             }
             persons.add(person);

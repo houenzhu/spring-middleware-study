@@ -44,4 +44,11 @@ public class DeleteTests {
         List<Person> personList = mongoTemplate.findAllAndRemove(query, Person.class);
         personList.forEach(System.out::println);
     }
+
+    @Test
+    void m5() {
+        Query query = new Query(Criteria.where("name").ne("张三"));
+        long deletedCount = mongoTemplate.remove(query, Person.class).getDeletedCount();
+        System.out.println(deletedCount);
+    }
 }

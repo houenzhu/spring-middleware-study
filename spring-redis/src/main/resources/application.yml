@@ -9,3 +9,11 @@ spring:
           max-active: 32
           min-idle: 8
       database: 1
+    mongodb:
+      host: 192.168.6.128
+      port: 27017
+      database: mall
+      auto-index-creation: true
+      authentication-database: admin
+      username: admin
+      password: "123456"
