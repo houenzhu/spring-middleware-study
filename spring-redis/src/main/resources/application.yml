@@ -26,11 +26,14 @@ spring:
     publisher-confirm-type: correlated
     # 开启消息返回机制
     publisher-returns: true
-    # 消费者手动确认
     listener:
       simple:
-        acknowledge-mode: manual
+        acknowledge-mode: auto  # 改为自动确认
         prefetch: 1
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000
 # 自定义配置
 app:
   rabbitmq:
