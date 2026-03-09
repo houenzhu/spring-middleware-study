@@ -49,7 +49,7 @@ public class MessageProducer {
      * @param message 消息内容
      */
     public void sendUserMessage(String userId, String action, Object message) {
-        String routingKey = "user:" + action;
+        String routingKey = "user." + action;
         rabbitTemplate.convertAndSend(topicExchange, routingKey, message, msg -> {
             // 设置消息ID
             msg.getMessageProperties().setMessageId(UUID.randomUUID().toString().replace("-", ""));
@@ -58,6 +58,17 @@ public class MessageProducer {
             return msg;
         });
         log.info("发送用户消息成功 - 路由键: {}, 用户ID: {}, 消息: {}",
+                routingKey, userId, message);
+    }
+
+    public void sendTestMessage(String userId, String action, Object message) {
+        String routingKey = "test." + action;
+        rabbitTemplate.convertAndSend(topicExchange, routingKey, message, msg -> {
+            msg.getMessageProperties().setMessageId(UUID.randomUUID().toString().replace("-", ""));
+            msg.getMessageProperties().setTimestamp(new Date());
+            return msg;
+        });
+        log.info("发送测试消息成功 - 路由键: {}, ID: {}, 消息: {}",
                 routingKey, userId, message);
     }
 
@@ -76,4 +87,5 @@ public class MessageProducer {
         });
         log.info("发送通用消息成功 - 路由键: {}, 消息: {}", routingKey, message);
     }
+
 }

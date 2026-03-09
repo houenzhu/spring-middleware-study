@@ -78,7 +78,7 @@ public class UserMessageConsumer {
      */
     private void processUserLogin(Map<String, Object> message) {
         String userId = (String) message.get("userId");
-        String loginTime = (String) message.get("loginTime");
+        Long loginTime = (Long) message.get("loginTime");
         log.info("处理用户登录 - 用户ID: {}, 登录时间: {}", userId, loginTime);
         // 用户登录业务逻辑
     }

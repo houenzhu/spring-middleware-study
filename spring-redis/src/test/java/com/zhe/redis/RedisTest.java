@@ -1,26 +1,38 @@
 package com.zhe.redis;
 
-import io.micrometer.observation.Observation;
+import com.zhe.redis.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 @SpringBootTest
+@Slf4j
 public class RedisTest implements InitializingBean {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private RedissonClient redissonClient;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private OrderService orderService;
 
     private static final Integer CORE_POOL_SIZE = 5;
     private static final Integer MAXIMUM_POOL_SIZE = CORE_POOL_SIZE * 2;
@@ -127,9 +139,51 @@ public class RedisTest implements InitializingBean {
         }
     }
 
+    @Test
+    public void setIds() {
+        List<Integer> list = Arrays.asList(15985, 16991, 14983);
+        redisTemplate.opsForList().leftPushAll("ids", list);
+    }
+
+    @Test
+    public void readLua() {
+        DefaultRedisScript<Boolean> defaultRedisScript =
+                new DefaultRedisScript<>();
+        defaultRedisScript.setLocation(new ClassPathResource("lua/seckill.lua"));
+        defaultRedisScript.setResultType(Boolean.class);
+        Boolean exists = redisTemplate.execute(defaultRedisScript, List.of("myset1"), "v3");
+        System.out.println(exists);
+    }
+
+    @Test
+    public void seckill() {
+        Runnable task = () -> {
+            String result = orderService.seckill("1001", String.valueOf(Thread.currentThread().getId()));
+            System.out.println(Thread.currentThread().getName() + " " + result);
+        };
+        for (int i = 0; i < 1000; i++) {
+            executor.execute(task);
+        }
+    }
+
+    @Test
+    public void rateLimit() {
+        String key = "ratelimit:127_0_0_1";
+        long now = System.currentTimeMillis();
+        long windowSize = 10000L;
+        long windowStart = now - windowSize;
+        DefaultRedisScript<Long> defaultRedisScript = new DefaultRedisScript<>();
+        defaultRedisScript.setLocation(new ClassPathResource("lua/ratelimit.lua"));
+        defaultRedisScript.setResultType(Long.class);
+        redisTemplate.execute(defaultRedisScript, List.of(key), now, windowStart, 100);
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
-        redisTemplate.opsForValue().set(BALANCE_KEY, 100);
-        System.out.println("库存预热");
+        redisTemplate.opsForValue().set("seckill:stock:1001", 10);
+        log.info("秒杀商品库存预热完成...");
     }
+
+
+
 }

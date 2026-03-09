@@ -4,9 +4,7 @@ import com.zhe.rabbitmq.producer.MessageProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * 测试控制器
@@ -71,7 +69,7 @@ public class TestController {
      * 发送用户登录消息
      */
     @PostMapping("/user/login")
-    public String sendUserLoginMessage(@RequestParam String userId) {
+    public String sendUserLoginMessage(@RequestParam("userId") String userId) {
         Map<String, Object> message = new HashMap<>();
         message.put("userId", userId);
         message.put("loginTime", System.currentTimeMillis());
@@ -93,5 +91,14 @@ public class TestController {
 
         messageProducer.sendMessage(routingKey, message);
         return "自定义消息发送成功，路由键: " + routingKey;
+    }
+
+    @PostMapping("/test")
+    public String sendTestMessage(@RequestParam("userId") String userId) {
+        Map<String, Object> msg = new HashMap<>();
+        msg.put("address", "翠芳园");
+        msg.put("customer", Arrays.asList("小李", "小红", "小吴", "小欧", "小陈", "小朱", "小炮"));
+        messageProducer.sendTestMessage(userId, "meat", msg);
+        return "消息发送成功";
     }
 }

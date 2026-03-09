@@ -1,4 +1,20 @@
 spring:
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3308/test_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: 123456
+        slave_1:
+          url: jdbc:mysql://localhost:3307/test_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: 123456
   data:
     redis:
       port: 6379
@@ -10,7 +26,7 @@ spring:
           min-idle: 8
       database: 1
     mongodb:
-      host: 192.168.6.128
+      host: 192.168.6.130
       port: 27017
       database: mall
       auto-index-creation: true
@@ -42,7 +58,13 @@ app:
     # 队列名称
     order-queue: order.queue
     user-queue: user.queue
+    test-queue: test.queue
     # 路由键
     order-routing-key: order.*
     user-routing-key: user.*
+    test-routing-key: test.*
     all-routing-key: "#"
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  global-config:
+    enable-sql-runner: true

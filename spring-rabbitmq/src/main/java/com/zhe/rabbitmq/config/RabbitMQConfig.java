@@ -29,12 +29,18 @@ public class RabbitMQConfig {
     @Value("${app.rabbitmq.user-queue}")
     private String userQueue;
 
+    @Value("${app.rabbitmq.test-queue}")
+    private String testQueue;
+
     // 从配置文件中读取路由键
     @Value("${app.rabbitmq.order-routing-key}")
     private String orderRoutingKey;
 
     @Value("${app.rabbitmq.user-routing-key}")
     private String userRoutingKey;
+
+    @Value("${app.rabbitmq.test-routing-key}")
+    private String testRoutingKey;
 
     @Bean
     public TopicExchange topicExchange() {
@@ -60,6 +66,11 @@ public class RabbitMQConfig {
         return new Queue(userQueue, true, false, false);
     }
 
+    @Bean
+    public Queue testQueue() {
+        return new Queue(testQueue, true, false, false);
+    }
+
     /**
      * 绑定订单队列到主题交换机
      * 使用路由键 "order.*" 匹配所有以 "order." 开头的消息
@@ -77,6 +88,13 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(userQueue())
                 .to(topicExchange())
                 .with(userRoutingKey);
+    }
+
+    @Bean
+    public Binding testBinding() {
+       return BindingBuilder.bind(testQueue())
+               .to(topicExchange())
+               .with(testRoutingKey);
     }
 
     /**
